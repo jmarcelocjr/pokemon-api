@@ -1,7 +1,7 @@
 package br.com.mcerqueira.pokemon.service
 
-import br.com.mcerqueira.pokemon.entity.Pokeball
 import br.com.mcerqueira.pokemon.entity.Pokemon
+import br.com.mcerqueira.pokemon.entity.Type
 import br.com.mcerqueira.pokemon.repository.PokemonRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -20,8 +20,8 @@ class PokemonService {
         return pokemonRepository.findByNameIgnoreCase(name)
     }
 
-    fun findByPokeball(pokeball: Pokeball): List<Pokemon>? {
-        return pokemonRepository.findByPokeball(pokeball)
+    fun findByType(type: Type): List<Pokemon>? {
+        return pokemonRepository.findByType(type)
     }
 
     fun save(pokemon: Pokemon) {

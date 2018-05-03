@@ -1,7 +1,7 @@
 package br.com.mcerqueira.pokemon.controller
 
-import br.com.mcerqueira.pokemon.entity.Pokeball
 import br.com.mcerqueira.pokemon.entity.Pokemon
+import br.com.mcerqueira.pokemon.entity.Type
 import br.com.mcerqueira.pokemon.service.PokemonService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
@@ -25,8 +25,8 @@ class PokemonController {
 
     @GetMapping("/type/{type}")
     fun findByType(@PathVariable("type", required=true) typeName: String): List<Pokemon>? {
-        val type = Pokeball(null, typeName )
-        return pokemonService.findByPokeball(type)
+        val type = Type(null, typeName )
+        return pokemonService.findByType(type)
     }
 
     @PostMapping
