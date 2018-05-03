@@ -23,10 +23,10 @@ class PokemonController {
         return pokemonService.findByName(name)
     }
 
-    @GetMapping("/pokeball/{pokeball}")
-    fun findByPokeball(@PathVariable("pokeball", required=true) pokeballName: String): List<Pokemon>? {
-        val pokeball = Pokeball(null, pokeballName )
-        return pokemonService.findByPokeball(pokeball)
+    @GetMapping("/type/{type}")
+    fun findByType(@PathVariable("type", required=true) typeName: String): List<Pokemon>? {
+        val type = Pokeball(null, typeName )
+        return pokemonService.findByPokeball(type)
     }
 
     @PostMapping

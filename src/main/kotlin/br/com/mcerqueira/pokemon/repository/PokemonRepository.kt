@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository
 interface PokemonRepository : MongoRepository<Pokemon, String> {
 
     fun findByNameIgnoreCase(name: String): Pokemon?
-    fun findByPokeball(pokeball: Pokeball): List<Pokemon>?
+    fun findByType(type: String): List<Pokemon>?
 }
