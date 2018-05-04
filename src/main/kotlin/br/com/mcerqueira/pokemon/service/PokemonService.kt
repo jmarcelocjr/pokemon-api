@@ -28,4 +28,8 @@ class PokemonService {
         pokemonRepository.save(pokemon)
     }
 
+    fun delete(id: String) {
+        val pokemon = pokemonRepository.findById(id).get()
+        pokemonRepository.delete(pokemon)
+    }
 }

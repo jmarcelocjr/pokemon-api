@@ -33,4 +33,9 @@ class PokemonController {
     fun save(@RequestBody pokemon: Pokemon) {
         pokemonService.save(pokemon)
     }
+
+    @DeleteMapping("/{id}")
+    fun delete(@PathVariable("id", required=true) id: String) {
+        pokemonService.delete(id)
+    }
 }
